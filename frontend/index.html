@@ -2,9 +2,18 @@
 <html>
 <head>
   <title>CivicAI Assistant</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
+<script src="./script.js"></script>
 </head>
 <body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <h1>🗳 CivicAI</h1>
+  <p style="font-size:12px; color:#aaa;">
+    Simplifying Elections for Every Citizen
+  </p>
+</div>
 
 <div class="app">
 
@@ -15,18 +24,35 @@
     <button onclick="getTimeline()">📅 Timeline</button>
   </div>
 
-  <!-- Chat Area -->
+  <!-- Main Content -->
   <div class="chat-container">
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <button onclick="quickAsk('How to vote?')">🗳 How to Vote</button>
+      <button onclick="quickAsk('Who can vote?')">👤 Eligibility</button>
+      <button onclick="quickAsk('Election timeline')">📅 Timeline</button>
+    </div>
+
+    <!-- Language Toggle -->
+    <div style="padding:10px;">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('hi')">हिंदी</button>
+    </div>
+
+    <!-- Chat Box -->
     <div id="chat" class="chat-box"></div>
 
+    <!-- Input -->
     <div class="input-area">
       <input id="userInput" placeholder="Ask about elections..." />
       <button onclick="sendMessage()">Send</button>
     </div>
+
   </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>

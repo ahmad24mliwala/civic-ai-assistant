@@ -1,55 +1,240 @@
-body {
-  margin: 0;
-  font-family: Arial;
+
+/* Topbar */
+.topbar {
+  background: linear-gradient(90deg, #19c37d, #0ea5e9);
+  padding: 15px;
+  text-align: center;
 }
 
+.topbar h1 {
+  margin: 0;
+}
+
+.topbar p {
+  margin: 0;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1f1f23, #2a2b32);
+  color: #fff;
+}
+
+/* Layout */
 .app {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
+/* Sidebar */
 .sidebar {
-  width: 250px;
+  width: 260px;
   background: #202123;
-  color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 1px solid #2f3035;
 }
 
+.sidebar h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #19c37d;
+}
+
+/* Sidebar buttons */
 .sidebar button {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
   background: #343541;
   color: white;
-  border: none;
   cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
 }
 
+.sidebar button:hover {
+  background: #19c37d;
+  transform: translateY(-2px);
+}
+
+/* Quick actions */
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+}
+
+.quick-actions button {
+  flex: 1;
+  font-size: 12px;
+  padding: 8px;
+  background: #2f3035;
+  border-radius: 6px;
+}
+
+.quick-actions button:hover {
+  background: #19c37d;
+}
+
+/* Chat container */
 .chat-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #343541;
+  background: transparent;
 }
 
+/* Chat box */
 .chat-box {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Chat bubbles */
+.chat-box p {
+  max-width: 70%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+  word-wrap: break-word;
+}
+
+/* User message */
+.chat-box p:nth-child(odd) {
+  background: #19c37d;
+  color: black;
+  align-self: flex-end;
+}
+
+/* AI message */
+.chat-box p:nth-child(even) {
+  background: #444654;
+  align-self: flex-start;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  padding: 12px;
+  background: #202123;
+  border-top: 1px solid #2f3035;
+}
+
+/* Input */
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #2f3035;
   color: white;
 }
 
-.input-area {
-  display: flex;
-  padding: 10px;
-  background: #202123;
+/* Send button */
+.input-area button {
+  margin-left: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #19c37d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-input {
-  flex: 1;
-  padding: 10px;
+.input-area button:hover {
+  background: #13a36b;
+  transform: scale(1.05);
 }
 
-button {
-  padding: 10px;
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔥 Mobile Responsive */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .chat-box {
+    padding: 10px;
+  }
+
+  .chat-box p {
+    max-width: 90%;
+    font-size: 14px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  .input-area button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }

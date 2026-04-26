@@ -1,0 +1,17 @@
+{
+  "steps": [
+    "1️⃣ Register as a voter on NVSP portal",
+    "2️⃣ Get your Voter ID card",
+    "3️⃣ Check election date in your area",
+    "4️⃣ Visit polling booth",
+    "5️⃣ Verify identity",
+    "6️⃣ Cast vote using EVM",
+    "7️⃣ Track results online"
+  ],
+  "timeline": {
+    "Registration": "Before elections (anytime)",
+    "Campaign": "1-2 months before voting",
+    "Voting Day": "Declared by Election Commission",
+    "Results": "Within few days after voting"
+  }
+}
